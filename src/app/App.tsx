@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import styles from "./App.module.css";
 
@@ -6,6 +7,16 @@ function App(): JSX.Element {
   const [count, setCount] = useState<number>(0);
   return (
     <div className={styles.App}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/help">
+            <p>Help</p>
+          </Route>
+          <Route path="/">
+            <p>Home</p>
+          </Route>
+        </Switch>
+      </BrowserRouter>
       <header className={styles["App-header"]}>
         <img src={logo} className={styles["App-logo"]} alt="logo" />
         <p>Hello Vite + React!</p>
